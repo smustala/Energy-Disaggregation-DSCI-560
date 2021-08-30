@@ -1,0 +1,2 @@
+This folder has notebooks for hyperparameter tuning for the appliances we tuned on: Dishwasher, microwave, stove and kitchen outlet.
+A common notebook named "Seq2point_tuning-Common" can be used as a common notebook to tune on any appliance with any training data. 

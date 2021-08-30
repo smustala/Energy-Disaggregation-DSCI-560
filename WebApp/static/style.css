@@ -1,0 +1,241 @@
+body{
+    background-image: url(dashboard_data/plant-background.jpg);
+}
+
+#formDiv {
+    text-align: center;
+    height: 500px;
+    width: 910px;
+    margin-top: 3%;
+    font-size:20px;
+    display: contents;
+    color: white;
+}
+
+#formContent{
+    position: relative;
+    top: 10%;
+}
+
+#submitbtn{
+    height:50px;
+    width:18%;
+    background-color:#66a103;
+    color:white;
+    font-size: 18px;
+    border: none;
+}
+
+#loader {
+  display:none;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #182f27;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  position: absolute;
+  left: 48%;
+  top: 20%;
+  z-index: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 50px;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    height: 100vh;
+    font-family: Arial Narrow;
+}
+
+.header {
+    grid-area: header;
+  }
+
+  .main {
+    grid-area: main;
+    display:none;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+
+  .header, .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      color: #DCDCDC;
+      /*background-image: url('./dashboard_data/network-background.jpg');*/
+  }
+
+  .title {
+      font-weight:bolder;
+      font-size: 30px;
+  }
+
+  .charttitle {
+    stroke: gainsboro;
+    stroke-width: 0px;
+    fill: gainsboro;
+  }
+
+  .main-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Where the magic happens */
+    grid-auto-rows: 94px;
+    grid-gap: 20px;
+    margin: 20px;
+    width: 100%;
+  }
+
+  .main-mains {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr)); /* Where the magic happens */
+    grid-auto-rows: 208px;
+    grid-gap: 20px;
+    margin: 20px;
+    width: 100%;
+
+    vertical-align: center;
+  }
+
+  .overviewcard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #182f27;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .microwave {
+      background-color: #182f27;
+      color: #CD5C5C;
+  }
+
+  .dishwasher {
+      background-color: #182f27;
+      color:#00BFFF;
+  }
+
+  .overviewcard__info {
+      font-size: 40px;
+  }
+
+  .overviewcard__icon {
+      color: gainsboro;
+  }
+
+  .overviewcard__icon.mains_ {
+    font-size: 20px;
+}
+
+/*
+  .avg {
+      color: white;
+  }
+  .peak {
+      color: #CD5C5C;
+  }
+*/
+  .mains_ {
+      margin: 20px;
+      color: darkgrey;
+  }
+
+  .mains_.avg {
+    font-size: 60px;
+}
+
+.mains_.peak{
+    font-size: 60px;
+}
+
+  .main-cards {
+    column-count: 2;
+    column-gap: 20px;
+    margin: 20px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   /* background-color: white;*/
+   /* margin-bottom: 20px;*/
+    -webkit-column-break-inside: avoid;
+    /*padding: 24px;*/
+    box-sizing: border-box;
+  }
+
+  .main-charts {
+    column-count: 2;
+    column-gap: 20px;
+    margin: 20px;
+  }
+
+  .chart {
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color:#182f27; /* #DCDCDC;*/
+   margin-bottom: 20px;
+    -webkit-column-break-inside: avoid;
+    padding: 24px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+  .chart:first-child {
+    height: 485px;
+  }
+
+  .chart:nth-child(2) {
+    height: 485px;
+  }
+
+  #linechart {
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+
+  .microwave {
+    fill: none;
+    stroke: #CD5C5C;
+    stroke-width: 2px;
+  }
+
+  .mains {
+    fill: none;
+    stroke: dimgrey;
+    stroke-width: 2px;
+  }
+
+  .dishwasher{
+    fill: none;
+    stroke:#00BFFF;
+    stroke-width: 2px;
+  }
+
+  .xaxis,.yaxis {
+    color: gainsboro;
+  }
+
+  .legend {
+    color: gainsboro;
+    stroke: gainsboro;
+    stroke-width: 0px;
+    fill: gainsboro;
+  }

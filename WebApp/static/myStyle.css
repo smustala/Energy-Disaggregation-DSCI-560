@@ -1,0 +1,38 @@
+body {
+    margin:2% 20%;
+    height:auto;
+    width:auto;
+}
+
+#heading {
+    background-color: #66a103;
+    height: 80px;
+    width: 910px;
+    text-align: center;
+    color: white;
+    display:flex;
+    flex-direction: column;
+}
+
+#formDiv {
+    background-color: #f9f9f3;
+    height: 500px;
+    width: 910px;
+    margin-top: 3%;
+    text-align: center;
+    font-size:25px;
+}
+
+#formContent{
+    position: relative;
+    top: 10%;
+}
+
+#submitbtn{
+    height:50px;
+    width:20%;
+    background-color:#66a103;
+    color:white;
+    font-size: 18px;
+}
+}

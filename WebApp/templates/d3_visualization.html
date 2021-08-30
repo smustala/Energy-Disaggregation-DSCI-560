@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Energy Disaggregation</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="https://d3js.org/d3-hierarchy.v2.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js" integrity="sha512-cd6CHE+XWDQ33ElJqsi0MdNte3S+bQY819f7p3NUHgwQQLXSKjE4cPZTeGNI+vaxZynk1wVU3hoHmow3m089wA==" crossorigin="anonymous"></script>
+
+
+    <script type="text/html" src="https://cdnjs.com/libraries/d3-legend"></script>
+
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+
+<body>
+<div class="grid-container">
+
+    <header class="header">
+        <div class="title"> Energy Disaggregation </div>
+        <div class="team"> The PythonPuff Girls </div>
+    </header>
+
+
+    <div id="formDiv">
+        <div id="formContent">
+            <form id="form" name="form" method="post" enctype="multipart/form-data">
+                <h3>Select csv of mains energy readings to upload:</h3>
+                <br>
+                <input type="file" name="file" id="file" style="margin-left: 1%;">
+                <br><br><br>
+                <input type="submit" id="submitbtn" class="registerbtn" value="Disaggregate" name="submit" form="form">
+            </form>
+        </div>
+    </div>
+
+    <div id="loader"></div>
+
+
+    <main class="main" id="main">
+
+          <div class="main-cards">
+            <div class="card">
+                <div class="main-mains">
+                   <div class="overviewcard mains">
+                    <img src="static/dashboard_data/homeicon.png" width=40px height=40px>
+                   <div>
+                        <div class="overviewcard__info avg mains_" id="mainsavg"></div>
+                        <div class="overviewcard__icon mains_">Mains Average</div>
+                    </div>
+                  </div>
+                  <div class="overviewcard mains">
+                    <img src="static/dashboard_data/homeicon.png" width=40px height=40px>
+                    <div>
+                        <div class="overviewcard__info peak mains_" id="mainsmax"></div>
+                        <div class="overviewcard__icon mains_">Mains Peak</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                 <div class="main-overview">
+                <div class="overviewcard microwave">
+                  <img src="static/dashboard_data/microwaveicon.png" width=40px height=40px>
+                  <div>
+                    <div class="overviewcard__info avg" id="micavg"></div>
+                    <div class="overviewcard__icon">Microwave Average</div>
+                  </div>
+                </div>
+                <div class="overviewcard microwave">
+                    <img src="static/dashboard_data/microwaveicon.png" width=40px height=40px>
+                    <div>
+                      <div class="overviewcard__info peak" id="micmax"></div>
+                      <div class="overviewcard__icon">Microwave Peak</div>
+                    </div>
+                </div>
+                <div class="overviewcard dishwasher">
+                    <img src="static/dashboard_data/dishwashericon.svg" width=40px height=40px>
+                    <div>
+                      <div class="overviewcard__info avg" id="dishavg"></div>
+                      <div class="overviewcard__icon">Dishwasher Average</div>
+                    </div>
+                </div>
+                <div class="overviewcard dishwasher">
+                    <img src="static/dashboard_data/dishwashericon.svg" width=40px height=40px>
+                    <div>
+                      <div class="overviewcard__info peak" id="dishmax"></div>
+                      <div class="overviewcard__icon">Dishwasher Peak</div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="main-charts">
+            <div class="chart">
+              <svg id="linechart"></svg>
+              <div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div>
+            </div>
+            <div class="chart"><svg id="piechart"></svg></div>
+          </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__copyright" >&copy; 2021 TPG</div>
+        <div class="footer__signature"> DSCI 560</div>
+    </footer>
+
+    <script src="static/dataviz.js"></script>
+
+</div>
+</body>
+</html>

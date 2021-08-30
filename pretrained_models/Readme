@@ -1,0 +1,26 @@
+This folder contains the scripts needed to run the seq2point testing using saved pretrained models. These scripts are used in dashboard backend to show the disaggregated results of mains data from any house inputted into the dashboard. 
+
+Since the size of the saved models is too big for github, we uploaded the saved models for dishwasher and microwave to figshare. Go to figshare and type these DOIs in the search: 
+
+Dishwasher: 10.6084/m9.figshare.14481717
+Microwave: 10.6084/m9.figshare.14481705
+
+Instructions for using the saved model for dashboard:
+
+
+Please run seq2point_test_modified.py to test on the trained model. 
+
+Variables to take into account while running this script:
+Path for the saved model for the appliance
+Path for the test data 
+Batch_size: 500 for both the appliances (already plugged into the code- don’t have to change)
+Input_window_length: 11 for microwave, 199 for dishwasher (already plugged into the code- don’t have to change)
+
+
+Filenames for best models for each appliance based on the tuned parameters:
+
+Microwave: microwave_best_e2w11.h5
+Dishwasher: dishwasher_best_e5w199b500.h5
+
+The test set in the drive is for house 1 in REDD data: test_mains.csv 
+Output: time, mains data, predicted microwave, predicted dishwasher as csv  
